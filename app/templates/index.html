@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Generator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generate Video with Text and Image</h1>
+      <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+          {{ form.text.label }}<br />
+          {{ form.text(size=40) }}
+        </div>
+        <div>
+          {{ form.image.label }}<br />
+          {{ form.image() }}
+        </div>
+        <div>{{ form.submit() }}</div>
+      </form>
+    </div>
+  </body>
+</html>
